@@ -10,6 +10,14 @@ padding-top: 2px;
 padding-bottom: 2px;
 }
 
+section > p {
+	font-size: 1.0em;
+}
+
+.job:hover {
+background-color: powderblue;
+}
+
 .duties {
 	font-size: .8em;
-}
+} 
