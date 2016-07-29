@@ -1,3 +1,15 @@
+body {
+  max-width: 960px;
+  min-width: 200px;
+  display: flex;
+  margin: 0 auto;
+}
+
+main {
+  width: 100%;
+  flex: 1;
+}
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -12,6 +24,9 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
+  width: 95%;
+  flex: 1
+  vertical-align: top;
 }
 
 /* you're welcome to edit the
@@ -30,3 +45,17 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+/*media query to make background color hot pink on smaller screens*/
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+    display: block;
+  }
+
+  h1 {
+    font-size: medium;
+  }
+}
+
