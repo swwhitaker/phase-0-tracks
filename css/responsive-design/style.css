@@ -2,6 +2,7 @@ body {
   max-width: 960px;
   min-width: 200px;
   display: flex;
+  margin: 0 auto;
 }
 
 main {
@@ -44,3 +45,17 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+/*media query to make background color hot pink on smaller screens*/
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+    display: block;
+  }
+
+  h1 {
+    font-size: medium;
+  }
+}
+
