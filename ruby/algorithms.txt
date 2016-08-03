@@ -1,0 +1,23 @@
+-Upon arriving at the elevator
+	-push the door open button 
+	-enter the elevator
+-once inside the elevator
+	-ask me which floor I would like to go to 
+		-if response is a number
+			-press the button with the corresponding number
+		-otherwise
+			-if response is "Basement" 
+				-press 'B'
+			-elseif "Nevermind"
+				-exit elevator
+			-otherwise wait for response
+				-for an hour
+					-then press emergency button, as I might be dead
+						-follow attendant's instructions
+	-wait until ding sound and doors open
+		-upon doors open = true, exit the elevator
+		-if doors do not open within 10 minutes
+			-press emergency button
+				-follow attendant's instructions until correct floor number is illuminated and doors open
+					-exit elevator
+		
