@@ -1,3 +1,4 @@
+#elevator operator
 -Upon arriving at the elevator
 	-push the door open button 
 	-enter the elevator
@@ -21,3 +22,57 @@
 				-follow attendant's instructions until correct floor number is illuminated and doors open
 					-exit elevator
 		
+
+#Listening to Music
+-If I feel like listening to music at home && everyone else within earshot also does && I/we have time
+	-if in bedroom
+		-turn on soundbar
+			-if synced with phone bluetooth automatically, launch Spotify on phone
+				-navigate to playlists
+			-otherwise, sync with soundbar until synced
+				-once synced, launch Spotify on phone
+					-navigate to playlists
+	-if in laundry room or office
+		-launch Sonos app on phone, then navigate to spotify playlists
+	-if in living room or kitchen
+		-say command "Alexa, trigger listen to music" to launch Harmony Remote activity via IFTTT
+			-if receiver turns on
+				-wait 20 seconds for airplay to come online
+				-swipe up to access airplay menu on phone and choose receiver
+			-if receiver does not turn on
+				-launch harmony app on phone || grab physical harmony remote
+				-tap Listen to Music activity
+				-wait for receiver to turn on
+				-wait 20 seconds for airplay to come online
+				-swipe up to access airplay menu on phone and choose receiver
+		-if hour =>7am && <=7:59pm
+			-launch Spotify
+			-navigate to playlists
+		-if hour >=8pm && <=8am
+			-launch Ambify to sync Hue lights to music
+				-choose lights and effect settings 
+			-navigate to playlists	
+	-else
+		-put on headphones
+		-sync bluetooth
+		-launch Spotify
+			-navigate to playlists
+	-Assess activity && mood
+		-if mood == cheerful & activity requires<=85% of attention
+			-if working out
+				-shuffle indy workout ||
+			-shuffle cheerful indy || discover weeklyplaylist
+		-if mood == contemplative & activity requires
+			<=85% of attention
+			-shuffle study music || classical ||evening chill playlist
+		-if mood == any and activity requires >=85% of attention
+			-shuffle study music playlist
+	-until feels like listening music = false
+-pause music and exit app
+
+
+
+
+
+
+
