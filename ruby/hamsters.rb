@@ -12,10 +12,6 @@ color = color.capitalize
 puts "In your opinion, would you consider #{name} to be a good candidate for adoption?(Y/N)"
 adoption = gets.chomp
 adoption = adoption.downcase
-if adoption = "no" || "n" || "false"
-  puts "Why isn't #{name} a good candidate?"
-  response = gets.chomp
-end
 adoption = adoption.capitalize
 puts "How old is #{name}?"
 age = gets.chomp.to_i
