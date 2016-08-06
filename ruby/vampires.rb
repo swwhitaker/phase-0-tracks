@@ -7,7 +7,7 @@ employees_processed = 0
 
 
 #sets up loop
-until employees_processed == number_employees
+until employees_processed >= number_employees
 
 #question 1 establishes whether name is not known vampire alias
 
@@ -69,6 +69,9 @@ if response == "done"
 	finished = true
 	puts "Thank you."
 end
+#here is where the sunshine response ends the question & survey;
+#triggers result of 'probably a vampire' by changing values per validator logic, 
+#except in case of name alias triggering result: 'Certainly a Vampire'
 if response == "sunshine"
 	finished = true 
 	age_checks_out = false
@@ -89,7 +92,9 @@ End of Survey
 "
 puts "Result:"
 
-#here is the validator logic 
+#here is the validator logic. 
+#Note that I decided that "certainly" overrides "probably" 
+#in case of sunshine allergy _and_ vampire alias name concurrently. 
 if namechecksout != true 
 	puts "Certainly a vampire."
 elsif age_checks_out && (garlic_checks_out || mortality_checks_out)
