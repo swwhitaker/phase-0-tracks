@@ -1,0 +1,33 @@
+.column-1 {
+  width: 40%;
+  display: inline;
+  float: left;
+  vertical-align: top;
+  padding: .5em;
+    margin: 1em;
+
+}
+
+
+
+h2 {
+color: #800000
+}
+
+footer {
+  display: inline-block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: relative;
+  margin: 1em;
+}
+
+.column-2 {
+  width: 40%;
+  display: inline;
+    vertical-align: top;
+  float: right;
+  margin: 1em;
+  padding: .5em;
+}
