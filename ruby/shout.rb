@@ -4,4 +4,8 @@ module Shout
   end
   def self.yell_happily(words)
   	words + "!!!!" + "Ooooooh yeah! :)"
+  end 
 end
+
+Shout.yell_angrily("dammit")
+Shout.yell_happily("dayum")
