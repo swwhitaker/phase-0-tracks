@@ -1,29 +1,33 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [with: Will Farrel].
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+#Allows us to add some pre-written code from another file within the same directory
+#Since it's in the same directory, the load path is implicit
 require_relative 'state_data'
+
 
 class VirusPredictor
 
-  def initialize(state_of_origin, population_density, population)
-    @state = state_of_origin
-    @population = population
-    @population_density = population_density
-  end
+#sets up conditions for each new instance of the class, assigning three states; takes input of three parameters, and derives new instance with states
+def initialize(state_of_origin, population_density, population)
+  @state = state_of_origin
+  @population = population
+  @population_density = population_density
+end
 
-  def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
-  end
+#combines two methods and passes in their arguments to derive the output in one clean place; makes more compartmentalized
+def virus_effects
+  predicted_deaths 
+  speed_of_spread 
+end
 
-  private
+private
 
-  def predicted_deaths(population_density, population, state)
+#uses population density and population to project number of deaths
+def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,7 +45,8 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+#declares formula to calculate the rate based on input of population density, prints rate.
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -70,18 +75,37 @@ end
  # initialize VirusPredictor for each state
 
 
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
+ def report
 
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
+  STATE_DATA.each do |state, pop_data| 
+    prediction = VirusPredictor.new(state, STATE_DATA[state][:population_density], STATE_DATA[state][:population])
+    prediction.virus_effects
+# p state 
+# p pop_data
+end 
+end 
+report
 
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
 
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+
+# alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+# alabama.virus_effects
+
+# jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+# jersey.virus_effects
+
+# california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+# california.virus_effects
+
+# alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+# alaska.virus_effects
 
 
 #=======================================================================
 # Reflection Section
+#the rocket and the colon were both present to pair keys with values, might have been distinguished for readability
+#Allows us to add some pre-written code from another file within the same directory
+#Since it's in the same directory, the load path is implicit
+#.each and .map, .map!
+#They were being passed in as arguments, but weren't actually being used, because the methods were calling those attributes inline.
+#Storing information vs. side effects. Helped solidify scope and conceptual relationships. 
