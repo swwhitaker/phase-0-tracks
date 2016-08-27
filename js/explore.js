@@ -15,3 +15,9 @@ function reverse(string) {
 }
 
 reverse("hello");
+
+var bassackwards = reverse("bassackwards")
+
+if (1 == 1){
+console.log("bassackwards") 
+}
