@@ -1,3 +1,10 @@
+// I realize this assignment is not yet complete 
+// (typical excuses: preparing for the assessment and ran out of time; 
+// crazy week working an insane amount of hours on other significant projects,
+// blah blah. I know, not cool.)
+// But I will be returning to complete as time permits. 
+// I wanted to post the chunks I have in meantime
+
 
 function generate_string() {
 	var randstring = Math.random().toString(36).substring(20);
@@ -8,9 +15,9 @@ function generate_string() {
 
 generate_string()
 
-
+// create function with for loop to iterate through words, return word length as variable, compare, return longest word)
 function longest_word(array){
-	
+
 }
 
 
