@@ -35,6 +35,28 @@ longest_word(["long phrase","longest phrase","longer phrase"])
 var object1 = {name: "Steven", age: 54}
 var object2 = {name: "Tamir", age: 54}
 
-function compare(object1, object2){
-	if object1[name:]
+var object1 = {name: "Steven", age: 54};
+var object2 = {name: "Tamir", age: 54};
+var object3 = {sky: "infinite", sea: "expansive"};
+var object4 = {sun: "hot", stars: "distant"}; 
+
+// print for debug as necessary
+// console.log(object1);
+// console.log(object2);
+// console.log(object3);
+// console.log(object4);
+
+function compare(anobject, anotherobject) {
+	var match = false; 
+		if (anobject[0] == anotherobject[0]){ 
+			match = true;
+		}
+		else {
+			match = false;
+		}
+		
+	return match; 
 }
+
+// compare(object1, object2); 
+compare(object3, object4);
