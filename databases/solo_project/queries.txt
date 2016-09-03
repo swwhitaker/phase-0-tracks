@@ -1,0 +1,137 @@
+1. Display the information in one table (either table is fine).
+
+ssqlite> SELECT * FROM inventory;
+1|5|$15|1
+2|2|$20|2
+3|7|$25|3
+4|8|$30|4
+5|2|$50|5
+6|8|$55|6
+7|12|$125|7
+8|3|$250|8
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE inventory SET price = "$395" WHERE id = 8;
+sqlite> SELECT * FROM inventory;
+1|5|$15|1
+2|2|$20|2
+3|7|$25|3
+4|8|$30|4
+5|2|$50|5
+6|8|$55|6
+7|12|$125|7
+8|3|$395|8
+
+
+3. Display the information in both tables using one query.
+
+sqlite> SELECT * FROM inventory, sizes WHERE inventory.size = sizes.id;
+1|5|$15|1|1|4x6
+2|2|$20|2|2|5x7
+3|7|$25|3|3|8x10
+4|8|$30|4|4|8x12
+5|2|$50|5|5|16x20
+6|8|$55|6|6|16x24
+7|12|$125|7|7|20x30
+8|3|$250|8|8|24x36
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT inventory.price, sizes.size FROM inventory JOIN sizes ON inventory.size = sizes.id;
+$15|4x6
+$20|5x7
+$25|8x10
+$30|8x12
+$50|16x20
+$55|16x24
+$125|20x30
+$395|24x36
+
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM inventory WHERE id=3;
+sqlite> DELETE FROM sizes WHERE id=3;
+sqlite> SELECT inventory.price, sizes.size FROM inventory JOIN sizes ON inventory.size = sizes.id;
+$15|4x6
+$20|5x7
+$30|8x12
+$50|16x20
+$55|16x24
+$125|20x30
+$395|24x36
+
+Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+Cross Join: 
+sqlite> SELECT stock, price FROM inventory CROSS JOIN sizes;
+5|$15
+5|$15
+5|$15
+5|$15
+5|$15
+5|$15
+5|$15
+2|$20
+2|$20
+2|$20
+2|$20
+2|$20
+2|$20
+2|$20
+8|$30
+8|$30
+8|$30
+8|$30
+8|$30
+8|$30
+8|$30
+2|$50
+2|$50
+2|$50
+2|$50
+2|$50
+2|$50
+2|$50
+8|$55
+8|$55
+8|$55
+8|$55
+8|$55
+8|$55
+8|$55
+12|$125
+12|$125
+12|$125
+12|$125
+12|$125
+12|$125
+12|$125
+3|$395
+3|$395
+3|$395
+3|$395
+3|$395
+3|$395
+3|$395
+
+Inner Join: 
+sqlite> SELECT stock, price FROM inventory INNER JOIN sizes ON inventory.id = sizes.id;
+5|$15
+2|$20
+8|$30
+2|$50
+8|$55
+12|$125
+3|$395
+
+sqlite> SELECT stock, price FROM inventory LEFT OUTER JOIN sizes ON inventory.id = sizes.size;
+5|$15
+2|$20
+8|$30
+2|$50
+8|$55
+12|$125
+3|$395
+
