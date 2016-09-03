@@ -1,0 +1,24 @@
+Queries
+
+Joining three tables:
+
+sqlite> SELECT * FROM businesses, reviews, users WHERE reviews.business_id = businesses.id AND reviews.user_id = users.id;
+id|name|id|stars|comment|business_id|user_id|id|name
+1|Hamilton's Bar|1|5|My favorite college bar! Love the french fries|1|1|1|Corbin Via
+2|Target|2|5|You can find everything at this store|2|1|1|Corbin Via
+3|AutoZone|3|4|Car parts galore!|3|2|2|Stephen Whitaker
+sqlite> 
+
+Selecting columns from three joined tables:
+
+sqlite> SELECT reviews.comment, reviews.stars, users.name, businesses.name FROM reviews JOIN businesses ON reviews.business_id = businesses.id JOIN users ON reviews.user_id = users.id;
+comment|stars|name|name
+My favorite college bar! Love the french fries|5|Corbin Via|Hamilton's Bar
+You can find everything at this store|5|Corbin Via|Target
+Car parts galore!|4|Stephen Whitaker|AutoZone
+
+Select data from a single business:
+
+sqlite> SELECT reviews.comment, reviews.stars, users.name, businesses.name FROM reviews JOIN businesses ON reviews.business_id = businesses.id JOIN users ON reviews.user_id = users.id WHERE businesses.name = "Target";
+comment|stars|name|name
+You can find everything at this store|5|Corbin Via|Target
