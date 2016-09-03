@@ -61,3 +61,77 @@ $50|16x20
 $55|16x24
 $125|20x30
 $395|24x36
+
+Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+Cross Join: 
+sqlite> SELECT stock, price FROM inventory CROSS JOIN sizes;
+5|$15
+5|$15
+5|$15
+5|$15
+5|$15
+5|$15
+5|$15
+2|$20
+2|$20
+2|$20
+2|$20
+2|$20
+2|$20
+2|$20
+8|$30
+8|$30
+8|$30
+8|$30
+8|$30
+8|$30
+8|$30
+2|$50
+2|$50
+2|$50
+2|$50
+2|$50
+2|$50
+2|$50
+8|$55
+8|$55
+8|$55
+8|$55
+8|$55
+8|$55
+8|$55
+12|$125
+12|$125
+12|$125
+12|$125
+12|$125
+12|$125
+12|$125
+3|$395
+3|$395
+3|$395
+3|$395
+3|$395
+3|$395
+3|$395
+
+Inner Join: 
+sqlite> SELECT stock, price FROM inventory INNER JOIN sizes ON inventory.id = sizes.id;
+5|$15
+2|$20
+8|$30
+2|$50
+8|$55
+12|$125
+3|$395
+
+sqlite> SELECT stock, price FROM inventory LEFT OUTER JOIN sizes ON inventory.id = sizes.size;
+5|$15
+2|$20
+8|$30
+2|$50
+8|$55
+12|$125
+3|$395
+
