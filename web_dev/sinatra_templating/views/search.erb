@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search for a Student</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="search" placeholder="Search">
+    </form>
+    <p><%= @match[0][1] %>, <%= @match[0]['age'].to_s %></p>
+  </body>
+</html>
